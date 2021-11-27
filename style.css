@@ -39,9 +39,11 @@ h3 {
 }
 
 @media (max-width: 768px) {
+
   .banner {
     text-align: center;
   }
+  
 }
 
 .title {

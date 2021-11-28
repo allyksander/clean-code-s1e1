@@ -16,7 +16,7 @@ var completedTasksHolder = document.getElementById("completed-tasks");//complete
 var createNewTaskElement = function (taskString) {
 
   var listItem = document.createElement("li");
-  listItem.classList.add('list-item')
+  listItem.classList.add('app-list__item')
 
   //input (checkbox)
   var checkBox = document.createElement("input");//checkbx
@@ -36,13 +36,13 @@ var createNewTaskElement = function (taskString) {
   deleteButtonImg.classList.add("btn-img")
 
   label.innerText = taskString;
-  label.className = 'task-name';
+  label.className = 'app-list__task';
 
   //Each elements, needs appending
   checkBox.type = "checkbox";
-  checkBox.className = "input-checkbox";
+  checkBox.className = "app-list__checkbox";
   editInput.type = "text";
-  editInput.className = "input-text";
+  editInput.className = "app-list__text";
 
   editButton.innerText = "Edit"; //innerText encodes special characters, HTML does not.
   editButton.className = "btn js-edit";
@@ -84,7 +84,7 @@ var editTask = function () {
   var editInput = listItem.querySelector('input[type=text]');
   var label = listItem.querySelector("label");
   var editBtn = listItem.querySelector(".js-edit");
-  var containsClass = listItem.classList.contains("edit-mode");
+  var containsClass = listItem.classList.contains("app-list__item_edit-mode");
   //If class of the parent is .edit-mode
   if (containsClass) {
     //switch to .edit-mode
@@ -97,7 +97,7 @@ var editTask = function () {
   }
 
   //toggle .edit-mode on the parent.
-  listItem.classList.toggle("edit-mode");
+  listItem.classList.toggle("app-list__item_edit-mode");
 };
 
 //Delete task.
